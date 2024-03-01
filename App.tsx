@@ -5,7 +5,7 @@
  * @format
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Image,
   ImageBackground,
@@ -22,6 +22,10 @@ import AccionesAyuda from './screens/AccionesAyuda';
 import AccionesDetalle from './screens/AccionesDetalle';
 import HerramientasAyudador from './screens/HerramientasAyudador';
 import HerramientasDetalle from './screens/HerramientasDetalle';
+import Emocion from './screens/Emocion';
+import Emociones from './screens/Emociones';
+import TrackPlayer from 'react-native-track-player';
+import MasInformacion from './screens/MasInformacion';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +33,11 @@ const HomeScreen = () => {
   const image = require('./assets/images/LogoApp.png');
 
   const navigation: any = useNavigation();
+
+  const ingresar = async () => {
+    await TrackPlayer.setupPlayer();
+    navigation.navigate("Initial");
+  }
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -61,7 +70,7 @@ const HomeScreen = () => {
           marginTop: 70,
           width: '100%'
         }}>
-          <Pressable onPress={() => navigation.navigate("Initial")}>
+          <Pressable onPress={ingresar}>
             <Text style={{
               fontSize: 18,
               textAlign: 'center',
@@ -73,7 +82,7 @@ const HomeScreen = () => {
           </Pressable>
         </LinearGradient>
       </ImageBackground>
-    </SafeAreaView>
+    </SafeAreaView >
   )
 }
 
@@ -88,6 +97,9 @@ function App(): React.JSX.Element {
         <Stack.Screen name="AccionesDetalle" component={AccionesDetalle} options={{ headerShown: false }} />
         <Stack.Screen name="HerramientasAyudador" component={HerramientasAyudador} options={{ headerShown: false }} />
         <Stack.Screen name="HerramientasDetalle" component={HerramientasDetalle} options={{ headerShown: false }} />
+        <Stack.Screen name="Emocion" component={Emocion} options={{ headerShown: false }} />
+        <Stack.Screen name="Emociones" component={Emociones} options={{ headerShown: false }} />
+        <Stack.Screen name="MasInformacion" component={MasInformacion} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

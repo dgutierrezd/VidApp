@@ -49,7 +49,8 @@ const HerramientasAyudador = () => {
                                     "Sacar provecho de la hospitalización para analizar en familia las posibles causas, soluciones y roles de los integrantes de la familia para mitigar una posible repetición del acto"
                                 ],
                                 hasItems: false,
-                                img: require('../assets/images/herramientas1.png')
+                                img: require('../assets/images/herramientas1.png'),
+                                url: 'https://audio.jukehost.co.uk/kZac0EKFZVnbnCMW5n8v9DkhUIW8WdTE',
                             })
                         }}
                     >
@@ -88,7 +89,8 @@ const HerramientasAyudador = () => {
                                     "El cuidador o las personas que están en un relacionamiento constante con la persona que cometió el acto, en lo posible tener espacios para recargar su energía vital o si es necesario buscar ayuda de un profesional, ya que esto genera tensión, desgaste físico y psicológico."
                                 ],
                                 hasItems: true,
-                                img: require('../assets/images/herramientas2.png')
+                                img: require('../assets/images/herramientas2.png'),
+                                url: 'https://audio.jukehost.co.uk/aasOd0XZSoqkycHko2U7ZUqosDCtFc0a'
                             })
                         }}
                     >
@@ -130,7 +132,8 @@ const HerramientasAyudador = () => {
                                     "Evitar preguntas acerca de los detalles de la muerte."
                                 ],
                                 hasItems: true,
-                                img: require('../assets/images/herramientas3.png')
+                                img: require('../assets/images/herramientas3.png'),
+                                url: 'https://audio.jukehost.co.uk/gzMNkcN8q2pjzohLcbPXIoyPjBwnBV6R'
                             })
                         }}
                     >
@@ -169,7 +172,8 @@ const HerramientasAyudador = () => {
                                     "Desarrollar conductas y actitudes positivas."
                                 ],
                                 hasItems: true,
-                                img: require('../assets/images/herramientas4.png')
+                                img: require('../assets/images/herramientas4.png'),
+                                url: 'https://audio.jukehost.co.uk/s9jmFOqX0Ppxs6c5sH0PRLA4tP2H30oA'
                             })
                         }}
                     >

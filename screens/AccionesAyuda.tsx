@@ -43,7 +43,8 @@ const AccionesAyuda = () => {
                         onPress={() => {
                             navigation.navigate("AccionesDetalle", {
                                 senales: ["Me siento triste constantemente (depresión).", "Consumo o uso de ciertas sustancias.", "Me siento ansioso sin saber el por qué, no hay razón aparente.", "Tengo dificultad para conectarme emocionalmente con mis familiares, padres, amigos o con mi pareja sentimental.", "He intentado suicidarme y soy consciente de ello.", "Me he herido a mí mismo, no veo nada bueno en mí."],
-                                img: require('../assets/images/factorIndividuales.png')
+                                img: require('../assets/images/factorIndividuales.png'),
+                                url: 'https://audio.jukehost.co.uk/KnHWIfchixDbulSUsnUNT8hs7wTJTHGB'
                             })
                         }}
                     >
@@ -68,7 +69,8 @@ const AccionesAyuda = () => {
                     }} onPress={() => {
                         navigation.navigate("AccionesDetalle", {
                             senales: ["La violencia constante en mi entorno familiar me afecta.", "Siento que en mi casa no cuento con alguien que me ayude, oriente o escuche cuando tengo un inconveniente.", "El hecho de haber tenido que salir de mi casa e irme a estudiar o a trabajar a otra ciudad a afectado mi estado de ánimo."],
-                            img: require('../assets/images/factorFamiliares.png')
+                            img: require('../assets/images/factorFamiliares.png'),
+                            url: 'https://audio.jukehost.co.uk/YmZKAOvZi3X89pN8p4dW9j9DZ7yhD8To'
                         })
                     }}>
                         <Text style={{
@@ -92,7 +94,8 @@ const AccionesAyuda = () => {
                     }} onPress={() => {
                         navigation.navigate("AccionesDetalle", {
                             senales: ["Soy víctima constante de bullying y no sé qué hacer.", "Siento que a mí alrededor me rechazan y juzgan por mi orientación sexual.", "Me siento mal o triste de no poder acceder a la carrera que sea o anhelo estudiar.", "El hecho de haber vivido en un entorno marcado por la guerra y la violencia me afectó emocionalmente a mí y a mi familia."],
-                            img: require('../assets/images/factorSociales.png')
+                            img: require('../assets/images/factorSociales.png'),
+                            url: 'https://audio.jukehost.co.uk/Y4hswKww7vuZbn8l05bTUFCQccpccOfG'
                         })
                     }}>
                         <Text style={{
