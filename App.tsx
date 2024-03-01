@@ -6,113 +6,91 @@
  */
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
+  Image,
+  ImageBackground,
   Text,
-  useColorScheme,
+  SafeAreaView,
+  Pressable,
   View,
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import InitialScreen from './screens/InitialScreen';
+import AccionesAyuda from './screens/AccionesAyuda';
+import AccionesDetalle from './screens/AccionesDetalle';
+import HerramientasAyudador from './screens/HerramientasAyudador';
+import HerramientasDetalle from './screens/HerramientasDetalle';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+const Stack = createNativeStackNavigator();
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+const HomeScreen = () => {
+  const image = require('./assets/images/LogoApp.png');
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+  const navigation: any = useNavigation();
+
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
+    <SafeAreaView style={{ flex: 1 }}>
+      <ImageBackground source={image} resizeMode="cover" style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingHorizontal: 30
+      }} imageStyle={{ opacity: 0.5 }}>
+        <View style={{ alignItems: 'center' }}>
+          <Image source={require('./assets/images/LogoNameApp.png')} style={{ width: 200, height: 220 }} />
+          <Text style={{ textAlign: 'center', marginTop: 40 }}>¡Bienvenido a VidApp!</Text>
+          <Text style={{ textAlign: 'center', marginTop: 10 }}>
+            VidApp es una aplicación diseñada con un propósito fundamental:
+            la prevención del suicidio. Nuestro objetivo es brindar apoyo y
+            herramientas prácticas tanto a aquellas personas que atraviesan
+            una crisis emocional como a quienes desean ayudar a alguien en riesgo.
+          </Text>
+          <Text style={{ textAlign: 'center', marginTop: 10 }}>
+            Sabemos que el suicidio es un tema delicado y complejo, y reconocemos
+            la importancia de actuar de manera temprana y efectiva. Con VidApp,
+            queremos brindar un espacio seguro y confiable donde las personas
+            puedan encontrar recursos útiles para abordar situaciones de crisis.
+          </Text>
+        </View>
+        <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#2c97de', '#6656db']} style={{
+          paddingLeft: 15,
+          paddingRight: 15,
+          borderRadius: 30,
+          marginTop: 70,
+          width: '100%'
+        }}>
+          <Pressable onPress={() => navigation.navigate("Initial")}>
+            <Text style={{
+              fontSize: 18,
+              textAlign: 'center',
+              margin: 10,
+              color: '#ffffff',
+            }}>
+              Ingresa
+            </Text>
+          </Pressable>
+        </LinearGradient>
+      </ImageBackground>
+    </SafeAreaView>
+  )
 }
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Initial" component={InitialScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="AccionesAyuda" component={AccionesAyuda} options={{ headerShown: false }} />
+        <Stack.Screen name="AccionesDetalle" component={AccionesDetalle} options={{ headerShown: false }} />
+        <Stack.Screen name="HerramientasAyudador" component={HerramientasAyudador} options={{ headerShown: false }} />
+        <Stack.Screen name="HerramientasDetalle" component={HerramientasDetalle} options={{ headerShown: false }} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;
