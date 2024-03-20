@@ -26,6 +26,11 @@ import Emocion from './screens/Emocion';
 import Emociones from './screens/Emociones';
 import TrackPlayer from 'react-native-track-player';
 import MasInformacion from './screens/MasInformacion';
+import Introduccion from './screens/Introduccion';
+import Justificacion from './screens/Justificacion';
+import QueEsSuicidio from './screens/QueEsSuicidio';
+import DatosInteres from './screens/DatosInteres';
+import AccionesIntentoSuicida from './screens/AccionesIntentoSuicida';
 
 const Stack = createNativeStackNavigator();
 
@@ -100,6 +105,11 @@ function App(): React.JSX.Element {
         <Stack.Screen name="Emocion" component={Emocion} options={{ headerShown: false }} />
         <Stack.Screen name="Emociones" component={Emociones} options={{ headerShown: false }} />
         <Stack.Screen name="MasInformacion" component={MasInformacion} options={{ headerShown: false }} />
+        <Stack.Screen name="Introduccion" component={Introduccion} options={{ headerShown: false }} />
+        <Stack.Screen name="Justificacion" component={Justificacion} options={{ headerShown: false }} />
+        <Stack.Screen name="QueEsSuicidio" component={QueEsSuicidio} options={{ headerShown: false }} />
+        <Stack.Screen name="DatosInteres" component={DatosInteres} options={{ headerShown: false }} />
+        <Stack.Screen name="AccionesIntentoSuicida" component={AccionesIntentoSuicida} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

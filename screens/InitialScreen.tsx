@@ -23,6 +23,16 @@ const InitialScreen = () => {
                     <ScrollView contentContainerStyle={{ alignItems: 'center' }}>
                         <Image source={require('../assets/images/logoNameAppWhite.png')} style={{ width: 150, height: 170, alignSelf: 'center' }} />
                         <View style={{ backgroundColor: 'white', height: 1, width: '100%', marginVertical: 10 }} />
+                        <Text onPress={() => navigation.navigate("Introduccion")} style={{ color: 'white' }}>Introducción</Text>
+                        <View style={{ backgroundColor: 'white', height: 1, width: '100%', marginVertical: 10 }} />
+                        <Text onPress={() => navigation.navigate("Justificacion")} style={{ color: 'white' }}>Justificación</Text>
+                        <View style={{ backgroundColor: 'white', height: 1, width: '100%', marginVertical: 10 }} />
+                        <Text onPress={() => navigation.navigate("QueEsSuicidio")} style={{ color: 'white' }}>¿Qué es el suicidio?</Text>
+                        <View style={{ backgroundColor: 'white', height: 1, width: '100%', marginVertical: 10 }} />
+                        <Text onPress={() => navigation.navigate("DatosInteres")} style={{ color: 'white' }}>Datos cuantitativos de interés</Text>
+                        <View style={{ backgroundColor: 'white', height: 1, width: '100%', marginVertical: 10 }} />
+                        <Text onPress={() => navigation.navigate("AccionesIntentoSuicida")} style={{ color: 'white' }}>Acciones frente a un intento o ideación suicida</Text>
+                        <View style={{ backgroundColor: 'white', height: 1, width: '100%', marginVertical: 10 }} />
                         <Text onPress={() => navigation.navigate("AccionesAyuda")} style={{ color: 'white' }}>Acciones para brindar ayuda</Text>
                         <View style={{ backgroundColor: 'white', height: 1, width: '100%', marginVertical: 10 }} />
                         <Text onPress={() => navigation.navigate("HerramientasAyudador")} style={{ color: 'white' }}>Herramientas para el ayudador</Text>
